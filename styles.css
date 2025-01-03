@@ -1,8 +1,6 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-boxxs;
-    background-color: black;
 }
 
 .logo img{
@@ -47,16 +45,22 @@
 .banner img{
     width: 100%;
     height: 400px;
+    vertical-align: bottom;
 }
 
 .banner h1{
     color: #fff;
     position: absolute;
     z-index: 2;
-    left: 35%;
+    left: 37%;
     top: 45%;
     font-size: 40px;
     background-color: transparent;
+}
+
+.computers{
+    background-color: black;
+    padding-bottom: 30px;
 }
 
 .computers .intro{
@@ -70,8 +74,60 @@
     color: #26e22f;
     width: 100vw;
     text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
 }
 
 .computers .intro p{
     color: #fff;
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+.computer-product{
+    margin: auto;
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.computer1, .computer2, .computer3, .computer4{
+    max-width: 300px;
+}
+
+.computer-product .cpt-pic{
+    max-width: 300px;
+    background-color: rgb(38, 38, 38);
+}
+
+.computer-product .cpt-intro{
+    max-width: 300px;
+    background-color: rgb(80, 80, 80);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.computer-product .cpt-intro h3{
+    font-size: 24px;
+    padding: 20px 10px;
+    color: #fff;
+}
+
+.computer-product .cpt-intro p{
+    font-size: 16px;
+    padding: 20px 10px;
+    color: #fff;
+}
+
+.computer-product .cpt-intro .purchase{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    text-decoration: none;
+    color: #000;
+    background-color: #26e22f;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 10px;
 }
