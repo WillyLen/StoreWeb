@@ -4,6 +4,7 @@
 }
 html{
     background-color: #000;
+    scroll-behavior:smooth;
 }
 
 .logo img{
@@ -26,6 +27,11 @@ html{
     text-decoration: none;
     color: #fff;
     padding: 0 60px;
+    transition: .3s;
+}
+
+.links a:hover, .btn i:hover{
+    color: #26e22f;
 }
 
 .btn i{
@@ -39,6 +45,10 @@ html{
     justify-content: space-between;
     background-color: black;
     align-items: center;
+    position: fixed;
+    z-index: 9;
+    width: 100vw;
+    border-bottom: 1px solid #26e22f;
 }
 
 .banner{
@@ -135,6 +145,12 @@ html{
     padding: 5px 10px;
     font-size: 16px;
     border-radius: 10px;
+    transition: .3s;
+}
+
+.items .item-intro .purchase:hover{
+    color: #26e22f;
+    background-color: #000;
 }
 
 .divider{
