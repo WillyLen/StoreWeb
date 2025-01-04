@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
 }
+html{
+    background-color: #000;
+}
 
 .logo img{
     width: 100px;
@@ -58,19 +61,19 @@
     background-color: transparent;
 }
 
-.computers{
+.products{
     background-color: black;
     padding-bottom: 30px;
 }
 
-.computers .intro{
+.products .intro{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.computers .intro h1{
+.products .intro h1{
     color: #26e22f;
     width: 100vw;
     text-align: center;
@@ -78,29 +81,31 @@
     font-size: 40px;
 }
 
-.computers .intro p{
+.products .intro p{
     color: #fff;
     font-size: 18px;
     padding-bottom: 15px;
 }
 
-.computer-product{
+.items{
     margin: auto;
     max-width: 1440px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.computer1, .computer2, .computer3, .computer4{
+.item1, .item2, .item3, .item4, .item5, .item6, .item7{
     max-width: 300px;
+    margin: 20px 0;
 }
 
-.computer-product .cpt-pic{
+.items .item-pic{
     max-width: 300px;
     background-color: rgb(38, 38, 38);
 }
 
-.computer-product .cpt-intro{
+.items .item-intro{
     max-width: 300px;
     background-color: rgb(80, 80, 80);
     display: flex;
@@ -108,19 +113,19 @@
     position: relative;
 }
 
-.computer-product .cpt-intro h3{
+.items .item-intro h3{
     font-size: 24px;
     padding: 20px 10px;
     color: #fff;
 }
 
-.computer-product .cpt-intro p{
+.items .item-intro p{
     font-size: 16px;
     padding: 20px 10px;
     color: #fff;
 }
 
-.computer-product .cpt-intro .purchase{
+.items .item-intro .purchase{
     position: absolute;
     right: 15px;
     bottom: 15px;
@@ -130,4 +135,15 @@
     padding: 5px 10px;
     font-size: 16px;
     border-radius: 10px;
+}
+
+.divider{
+    border-top: 1px solid white;
+    padding: 20px 0 0;
+}
+
+.copyright{
+    color: #fff;
+    text-align: center;
+    padding: 0 0 10px;;
 }
