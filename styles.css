@@ -56,7 +56,7 @@ html{
 .shopcart{
     display: none;
     background-color: rgb(80, 80, 80);
-    width: 30vw;
+    width: 375px;
     height: 100vh;
     position: fixed;
     right: 0;
@@ -79,7 +79,7 @@ html{
 .shopcart .footer h1{
     color: #fff;
     border: 1px solid #26e22f;
-    width: 30vw;
+    width: 373px;
     text-align: center;
     cursor: pointer;
     background-color: rgb(80, 80, 80);
@@ -119,12 +119,14 @@ html{
 .product-name {
     font-size: 1rem;
     font-weight: bold;
+    max-width: 50px;
     margin: 0;
 }
 
 .product-price {
     font-size: 1rem;
     color: #555;
+    max-width: 50px;
 }
 
 .quantity {
@@ -315,7 +317,7 @@ html{
         top: 13px;
     }
 
-    .shopcart{
+    .shopcart-icon{
         position: relative;
     }
     .banner h1{
