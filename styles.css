@@ -11,10 +11,14 @@ html{
     width: 100px;
     border-radius: 75%;
     padding: 0 40px;
+    margin-right: 0;
 }
 
 #menu-toggle{
     display: none;
+    font-size: 20px;
+    color: #ffffff;
+    padding-left: 40px;
 }
 
 .links{
@@ -44,8 +48,111 @@ html{
     padding-right: 40px;
 }
 
-.shopcart{
+.shopcart-icon{
     display: flex;
+}
+
+
+.shopcart{
+    display: none;
+    background-color: rgb(80, 80, 80);
+    width: 30vw;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.shopcart .header{
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopcart .footer{
+    position: fixed;
+    bottom: 0;
+}
+.shopcart .footer h1{
+    color: #fff;
+    border: 1px solid #26e22f;
+    width: 30vw;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(80, 80, 80);
+}
+
+.shopcart .header .close{
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+}
+
+.product-items{
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.product-item {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr 1fr 50px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.product-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.product-price {
+    font-size: 1rem;
+    color: #555;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.quantity button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.quantity button:hover {
+    background-color: #0056b3;
+}
+
+.quantity-value {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    min-width: 20px;
 }
 
 .counter{
@@ -162,13 +269,14 @@ html{
     position: absolute;
     right: 15px;
     bottom: 15px;
-    text-decoration: none;
     color: #000;
     background-color: #26e22f;
     padding: 5px 10px;
     font-size: 16px;
     border-radius: 10px;
     transition: .3s;
+    cursor: pointer;
+    border: none;
 }
 
 .items .item-intro .purchase:hover{
@@ -242,17 +350,18 @@ html{
 
     #menu-toggle{
         display: inline-block;
+        cursor: pointer;
     }
 
     .links{
         background-color: rgb(80, 80, 80);
         top: 78px;
-        right: -150px;
+        left: -150px;
         display: flex;
         flex-flow: column;
         position: absolute;
         transition: transform 0.4s ease-in-out, opacity 0.3s ease;
-        transform: translateX(100%);
+        transform: translateX(-100%);
         opacity: 0;
         width: 150px;
         height: 100vh;
@@ -272,7 +381,7 @@ html{
     }
 
     .links.active {
-        right: 0;
+        left: 0;
         transform: translateX(0);
         opacity: 1;
     }
