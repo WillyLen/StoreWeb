@@ -41,7 +41,26 @@ html{
 .btn i{
     font-size: 20px;
     color: #ffffff;
-    padding: 0 20px;
+    padding-right: 40px;
+}
+
+.shopcart{
+    display: flex;
+}
+
+.counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #26e22f;
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    top: 40px;
 }
 
 .nav{
@@ -69,7 +88,7 @@ html{
     color: #fff;
     position: absolute;
     z-index: 2;
-    left: 37%;
+    left: 33%;
     top: 45%;
     font-size: 40px;
     background-color: transparent;
@@ -169,6 +188,28 @@ html{
 }
 
 @media screen and (max-width: 768px) {
+    .btn{
+        display: flex;
+    }
+
+    .counter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: #26e22f;
+        width: 15px;
+        height: 15px;
+        font-size: 15px;
+        border-radius: 50%;
+        position: absolute;
+        right: 32px;
+        top: 13px;
+    }
+
+    .shopcart{
+        position: relative;
+    }
     .banner h1{
         color: #fff;
         position: absolute;
