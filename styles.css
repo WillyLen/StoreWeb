@@ -197,7 +197,8 @@ html{
     color: #fff;
     position: absolute;
     z-index: 2;
-    left: 33%;
+    width: 100%;
+    text-align: center;
     top: 45%;
     font-size: 40px;
     background-color: transparent;
@@ -324,7 +325,8 @@ html{
         color: #fff;
         position: absolute;
         z-index: 2;
-        left: 3%;
+        width: 100%;
+        text-align: center;
         top: 55%;
         font-size: 30px;
         background-color: transparent;

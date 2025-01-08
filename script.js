@@ -2,6 +2,7 @@
 const productList = [
     {
         type: "computer",
+        index: 1,
         id: "computer1",
         img: "img/computer1.png",
         name: "全新 Bazer Blade 16",
@@ -10,6 +11,7 @@ const productList = [
     },
     {
         type: "computer",
+        index: 2,
         id: "computer2",
         img: "img/computer2.png",
         name: "全新 Bazer Blade 16",
@@ -18,6 +20,7 @@ const productList = [
     },
     {
         type: "computer",
+        index: 3,
         id: "computer3",
         img: "img/computer3.png",
         name: "全新 Bazer Blade 18",
@@ -26,6 +29,7 @@ const productList = [
     },
     {
         type: "computer",
+        index: 4,
         id: "computer4",
         img: "img/computer4.png",
         name: "全新 Bazer Blade 17",
@@ -34,6 +38,7 @@ const productList = [
     },
     {
         type: "keyboard",
+        index: 1,
         id: "keyboard1",
         img: "img/keyboard1.png",
         name: "Bazer Huntsman V3 Pro",
@@ -42,6 +47,7 @@ const productList = [
     },
     {
         type: "keyboard",
+        index: 2,
         id: "keyboard2",
         img: "img/keyboard2.png",
         name: "Bazer Ornata V3",
@@ -50,6 +56,7 @@ const productList = [
     },
     {
         type: "keyboard",
+        index: 3,
         id: "keyboard3",
         img: "img/keyboard3.png",
         name: "EVISU BlackWidow V3",
@@ -58,6 +65,7 @@ const productList = [
     },
     {
         type: "mouse",
+        index: 1,
         id: "mouse1",
         img: "img/mouse1.png",
         name: "Bazer Viper V3 Pro",
@@ -66,6 +74,7 @@ const productList = [
     },
     {
         type: "mouse",
+        index: 2,
         id: "mouse2",
         img: "img/mouse2.png",
         name: "Bazer Viper V3",
@@ -74,6 +83,7 @@ const productList = [
     },
     {
         type: "mouse",
+        index: 3,
         id: "mouse3",
         img: "img/mouse3.png",
         name: "BBazer Naga V2 Pro",
@@ -82,6 +92,7 @@ const productList = [
     },
     {
         type: "mouse",
+        index: 4,
         id: "mouse4",
         img: "img/mouse4.png",
         name: "Bazer Naga V2",
@@ -90,6 +101,7 @@ const productList = [
     },
     {
         type: "mouse",
+        index: 5,
         id: "mouse5",
         img: "img/mouse5.png",
         name: "Bazer DeathAdder V3",
@@ -98,6 +110,7 @@ const productList = [
     },
     {
         type: "mouse",
+        index: 6,
         id: "mouse6",
         img: "img/mouse6.png",
         name: "Bazer DeathAdder V2 X",
@@ -106,6 +119,7 @@ const productList = [
     },
     {
         type: "mouse",
+        index: 7,
         id: "mouse7",
         img: "img/mouse7.png",
         name: "Bazer Basilisk V3 35K",
@@ -114,6 +128,7 @@ const productList = [
     },
     {
         type: "earphone",
+        index: 1,
         id: "earphone1",
         img: "img/earphone1.png",
         name: "Bazer Kraken V3 Pro",
@@ -122,6 +137,7 @@ const productList = [
     },
     {
         type: "earphone",
+        index: 2,
         id: "earphone2",
         img: "img/earphone2.png",
         name: "Bazer Kraken V3",
@@ -130,6 +146,7 @@ const productList = [
     },
     {
         type: "earphone",
+        index: 3,
         id: "earphone3",
         img: "img/earphone3.png",
         name: "Bazer Barracuda",
@@ -138,6 +155,7 @@ const productList = [
     },
     {
         type: "earphone",
+        index: 4,
         id: "earphone4",
         img: "img/earphone4.png",
         name: "Bazer Barracuda X",
@@ -160,33 +178,13 @@ const closeicon = document.querySelector(".close");
 
 const quantityContainers = document.querySelectorAll('.quantity');
 
-quantityContainers.forEach(container => {
-    const decrement = container.querySelector('.decrement');
-    const increment = container.querySelector('.increment');
-    const quantityValue = container.querySelector('.quantity-value');
-    const productItem = container.closest('.product-item');
-
-    decrement.addEventListener('click', () => {
-        let value = parseInt(quantityValue.textContent);
-        if (value > 1) {
-            quantityValue.textContent = value - 1;
-        } else if (value === 1) {
-            productItem.remove();
-        }
-    });
-
-    increment.addEventListener('click', () => {
-        let value = parseInt(quantityValue.textContent);
-        quantityValue.textContent = value + 1;
-    });
-});
-
+//新增商品列表
 function AddProductList(location, type){
     let products = "";
     productList.forEach((product) => {
         if (product.type === type) {
             products += `
-                <div class="item${product.id}">
+                <div class="item${product.index}">
                     <div class="item-pic">
                         <img src="${product.img}" alt="${product.name}">
                     </div>
@@ -218,6 +216,7 @@ purchaseButtons.forEach(button => {
     })
 });
 
+//加入購物車
 function addToCartList(id) {
     const existingItem = cartList.find(item => item.id === id);
 
@@ -232,6 +231,7 @@ function addToCartList(id) {
     updateCartCount();
 }
 
+//更新購物車顯示
 function updateCartDisplay() {
     const cartContainer = document.querySelector('.product-items');
     cartContainer.innerHTML = "";
@@ -255,6 +255,7 @@ function updateCartDisplay() {
         }
     });
 
+    //加減購物車商品數量
     document.querySelectorAll('.decrement').forEach(button => {
         button.addEventListener('click', (e) => {
             const id = e.target.closest('.product-item').dataset.id;
@@ -270,6 +271,7 @@ function updateCartDisplay() {
     });
 }
 
+//更新購物車圓點數字
 function updateCartCount() {
     let count = 0;
 
@@ -283,7 +285,7 @@ function updateCartCount() {
     }
 }
 
-
+//更新購物車內商品數量
 function updateCartItemQuantity(id, change) {
     const cartItem = cartList.find(item => item.id === id);
 
